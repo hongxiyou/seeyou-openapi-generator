@@ -1,10 +1,17 @@
 package org.seeyou.generator;
 
-import org.openapitools.codegen.*;
-import io.swagger.models.properties.*;
-
-import java.util.*;
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+
+import org.openapitools.codegen.CodegenConfig;
+import org.openapitools.codegen.CodegenOperation;
+import org.openapitools.codegen.CodegenType;
+import org.openapitools.codegen.DefaultCodegen;
+import org.openapitools.codegen.SupportingFile;
 
 public class SeeyouGenerator extends DefaultCodegen implements CodegenConfig {
 
@@ -64,7 +71,7 @@ public class SeeyouGenerator extends DefaultCodegen implements CodegenConfig {
    * @return A string value for the help message
    */
   public String getHelp() {
-    return "Generates a seeyou client library.";
+    return "Generates a SeeYou application.";
   }
 
   public SeeyouGenerator() {
@@ -101,12 +108,12 @@ public class SeeyouGenerator extends DefaultCodegen implements CodegenConfig {
     /**
      * Api Package.  Optional, if needed, this can be used in templates
      */
-    apiPackage = "org.openapitools.api";
+    apiPackage = "org.seeyou.demo.api";
 
     /**
      * Model Package.  Optional, if needed, this can be used in templates
      */
-    modelPackage = "org.openapitools.model";
+    modelPackage = "org.seeyou.demo.model";
 
     /**
      * Reserved words.  Override this with reserved words specific to your language
