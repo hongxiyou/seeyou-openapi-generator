@@ -1,4 +1,4 @@
-package org.seeyou.generator;
+package org.seeyou.generator.openapi;
 
 import java.io.File;
 import java.util.ArrayList;

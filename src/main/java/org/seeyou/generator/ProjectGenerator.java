@@ -54,7 +54,7 @@ public class ProjectGenerator {
 
 	private void genDocsProject(String moduleName) {
 		CommandLineParams params = new CommandLineParams(moduleName, "html2");
-		params.set("-t", "src/main/resources/seeyou/htmlDocs2");
+		params.set("-t", "src/main/resources/org/seeyou/generator/openapi/htmlDocs2");
 		params.set("--invoker-package", packageName);
 		params.set("--model-package", packageName + ".model");
 		params.set("--api-package", packageName + ".api");

@@ -29,6 +29,10 @@
                 <groupId>org.openapitools</groupId>
                 <artifactId>openapi-generator-maven-plugin</artifactId>
                 <version>${openapi-generator-version}</version>
+                <configuration>
+                    <groupId>${project.groupId}</groupId>
+                    <artifactVersion>${project.version}</artifactVersion>
+                </configuration>
                 <executions>
                     <execution>
                         <id>client</id>
@@ -36,16 +40,18 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
+                            <artifactId>${projectNamePefix}-client</artifactId>
                             <inputSpec>${inputSpec}</inputSpec>
                             <generatorName>java</generatorName>
+                            <templateDirectory>src/main/resources/template/client</templateDirectory>
                             <output>${output}/${projectNamePefix}-client</output>
+                            <invokerPackage>${invokerPackage}.client</invokerPackage>
+                            <modelPackage>${invokerPackage}.client.model</modelPackage>
+                            <apiPackage>${invokerPackage}.client.api</apiPackage>
+                            <addCompileSourceRoot>false</addCompileSourceRoot>
                             <configOptions>
-                                <invokerPackage>${invokerPackage}.client</invokerPackage>
-                                <modelPackage>${invokerPackage}.client.model</modelPackage>
-                                <apiPackage>${invokerPackage}.client.api</apiPackage>
                                 <java8>true</java8>
                                 <library>feign</library>
-                                <dateLibrary>joda</dateLibrary>
                             </configOptions>
                         </configuration>
                     </execution>
@@ -55,16 +61,18 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
+                            <artifactId>${projectNamePefix}-server</artifactId>
                             <inputSpec>${inputSpec}</inputSpec>
                             <generatorName>spring</generatorName>
+                            <templateDirectory>src/main/resources/template/server</templateDirectory>
                             <output>${output}/${projectNamePefix}-server</output>
+                            <invokerPackage>${invokerPackage}.server</invokerPackage>
+                            <modelPackage>${invokerPackage}.server.model</modelPackage>
+                            <apiPackage>${invokerPackage}.server.api</apiPackage>
+                            <addCompileSourceRoot>false</addCompileSourceRoot>
                             <configOptions>
-                                <invokerPackage>${invokerPackage}.server</invokerPackage>
-                                <modelPackage>${invokerPackage}.server.model</modelPackage>
-                                <apiPackage>${invokerPackage}.server.api</apiPackage>
                                 <configPackage>${invokerPackage}.server.config</configPackage>
                                 <java8>true</java8>
-                                <dateLibrary>joda</dateLibrary>
                             </configOptions>
                         </configuration>
                     </execution>
@@ -74,15 +82,19 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
+                            <artifactId>${projectNamePefix}-axios</artifactId>
                             <inputSpec>${inputSpec}</inputSpec>
                             <generatorName>typescript-axios</generatorName>
-                            <output>${output}/${projectNamePefix}-web</output>
+                            <templateDirectory>src/main/resources/template/axios</templateDirectory>
+                            <output>${output}/${projectNamePefix}-axios</output>
+                            <invokerPackage>src</invokerPackage>
+                            <modelPackage>src/model</modelPackage>
+                            <apiPackage>src/api</apiPackage>
                             <configOptions>
-                                <npmName>${projectNamePefix}-web</npmName>
+                                <npmName>${projectNamePefix}-axios</npmName>
                                 <npmVersion>${project.version}</npmVersion>
-                                <invokerPackage>src</invokerPackage>
-                                <modelPackage>src/model</modelPackage>
-                                <apiPackage>src/api</apiPackage>
+                                <withSeparateModelsAndApi>true</withSeparateModelsAndApi>
+                                <supportsES6>true</supportsES6>
                             </configOptions>
                         </configuration>
                     </execution>

@@ -1,0 +1,17 @@
+parent:
+  groupId: org.seeyou.demo
+  artifactId: gen-demo
+  version: 0.1.2-SNAPSHOT
+  name: SeeYou Generator Demo
+
+server:
+  artifactId: ${parent.artifactId}-server
+  name: ${parent.name} -- Server
+
+client:
+  artifactId: ${parent.artifactId}-client
+  name: ${parent.name} -- Client
+
+axios:
+  artifactId: ${parent.artifactId}-axios
+  name: ${parent.name} -- Axios

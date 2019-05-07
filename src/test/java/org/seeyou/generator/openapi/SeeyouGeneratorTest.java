@@ -1,6 +1,7 @@
-package org.seeyou.generator;
+package org.seeyou.generator.openapi;
 
 import org.junit.Test;
+import org.seeyou.generator.ProjectGenerator;
 
 /***
  * This test allows you to easily launch your code generation software under a
@@ -37,7 +38,7 @@ public class SeeyouGeneratorTest {
 	 */
 	@Test
 	public void testProjectGenerator() {
-		new ProjectGenerator("src/test/resources/petstore.yaml").run();
+		new ProjectGenerator("src/test/resources/openapi-petstore.yaml").run();
 	}
 
 }
