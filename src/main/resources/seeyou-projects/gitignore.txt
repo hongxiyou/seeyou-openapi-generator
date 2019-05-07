@@ -1,0 +1,61 @@
+### Node.js ###
+node_modules/
+dist/
+.env.local
+.env.*.local
+
+### Maven ###
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+# Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
+!/.mvn/wrapper/maven-wrapper.jar
+
+### Eclipse, STS ###
+.settings/
+.externalToolBuilders/
+.apt_generated
+.classpath
+.factorypath
+.project
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+*.idea
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+/build/
+
+### VS Code ###
+.vscode/
+
+### logs ###
+logs/
+*.log
+
+### Other ###
+.svn/
+.git/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*

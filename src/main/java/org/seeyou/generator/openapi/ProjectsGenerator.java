@@ -59,6 +59,7 @@ public class ProjectsGenerator extends DefaultCodegen {
 				"", // the destination folder, relative `outputFolder`
 				"pom.xml") // the output file
 		);
+		supportingFiles.add(new SupportingFile("gitignore.txt", "", ".gitignore"));
 	}
 
 	/**
