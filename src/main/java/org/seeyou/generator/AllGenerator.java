@@ -12,6 +12,8 @@ import org.openapitools.codegen.CodegenConfigLoader;
 import org.openapitools.codegen.DefaultGenerator;
 import org.seeyou.generator.yaml.YamlLoader;
 
+import com.github.jknack.handlebars.internal.lang3.StringUtils;
+
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.Paths;
@@ -51,9 +53,13 @@ public class AllGenerator {
 		this.options = options;
 	}
 
-	private void createProjects(String outputDir) {
+	private void createParentProject(String outputDir) {
 		final String parentArtifactId = (String) options.get("parent.artifactId");
 		Validate.notBlank(parentArtifactId, "parent.artifactId must be specified");
+
+		if (StringUtils.isBlank(outputDir)) {
+			outputDir = ".";
+		}
 
 		CodegenConfig config = CodegenConfigLoader.forName("seeyou-projects");
 		config.setOutputDir(outputDir + "/" + parentArtifactId);
@@ -66,8 +72,20 @@ public class AllGenerator {
 		new DefaultGenerator().opts(opts).generate();
 	}
 
+	private void createModuleProject(String moduleName, String outputDir) {
+
+	}
+
 	public void generator(String outputDir) {
-		createProjects(outputDir);
+
+		createParentProject(outputDir);
+
+		String[] modules = (String[]) options.get("parent.modules");
+		if (modules != null && modules.length > 0) {
+			for (String module : modules) {
+				createModuleProject(module, outputDir + "/" + module);
+			}
+		}
 	}
 
 }
