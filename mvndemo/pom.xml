@@ -12,7 +12,7 @@
         <inputSpec>${project.basedir}/src/main/resources/petstore.yaml</inputSpec>
         <invokerPackage>org.demo.mvn</invokerPackage>
         <!--  -->
-        <openapi-generator-version>4.0.0-beta3</openapi-generator-version>
+        <openapi-generator-version>5.1.0</openapi-generator-version>
         <junit-version>4.12</junit-version>
         <java.version>1.8</java.version>
         <!--  -->
