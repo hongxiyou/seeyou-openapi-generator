@@ -10,7 +10,7 @@
 		<openapi-generator.version>4.0.0-SNAPSHOT</openapi-generator.version>
 		<snakeyaml-engine.version>1.0</snakeyaml-engine.version>
 		<commons-lang3.version>3.9</commons-lang3.version>
-		<log4j2.version>2.11.1</log4j2.version>
+		<log4j2.version>2.15.0</log4j2.version>
 		<junit.version>4.12</junit.version>
 		<!-- -->
 		<java.version>1.8</java.version>
